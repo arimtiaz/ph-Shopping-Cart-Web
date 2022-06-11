@@ -1,6 +1,20 @@
 
-document.getElementById("add-case").addEventListener("click", function(){
+function updateCaseNumber(isIncreasing){
     const caseInput = document.getElementById("case-count");
     const caseNumber = caseInput.value;
-    caseInput.value = parseInt(caseNumber) + 5;
+    if(isIncreasing == true){
+        caseInput.value = parseInt(caseNumber)+1;
+    } else {
+        caseInput.value = parseInt(caseNumber)-1;
+    }
+}
+
+document.getElementById("add-case").addEventListener("click", function(){
+    updateCaseNumber(true);
+    
+})
+
+document.getElementById("minus-case").addEventListener("click", function(){
+    updateCaseNumber(false);
+   
 })
